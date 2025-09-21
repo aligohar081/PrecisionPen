@@ -1,0 +1,8 @@
+# backend/requirements.txt
+crewai
+crewai-tools
+python-dotenv
+langchain-community
+langchain-cohere
+flask
+flask-cors
