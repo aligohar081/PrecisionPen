@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrecisionPen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Add the 'marked.js' library for Markdown to HTML conversion -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <!-- ===== STARTUP ANIMATION / SPLASH SCREEN ===== -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="pen_5502.png" alt="Loading Animation" class="splash-logo">
+            <h1 class="splash-text">PrecisionPen</h1>
+        </div>
+    </div>
+
+    <div class="app-wrapper">
+        <!-- Sidebar for Memory -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <button id="new-chat-button" class="new-chat-button">
+                    <i class="fas fa-plus"></i> New Chat
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <div class="memory-section">
+                    <h3 class="memory-title">Saved Chats</h3>
+                    <ul id="global-memory-list" class="memory-list">
+                        <!-- Saved articles will be dynamically inserted here -->
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Container -->
+        <div class="chat-container">
+            <!-- Header -->
+            <header class="chat-header">
+                <button id="sidebar-toggle" class="sidebar-toggle-button" aria-label="Toggle sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-content">
+                    <div class="header-icon">
+                        <img src="pen_5502.png" alt="Logo" style="width: 28px; height: 28px;">
+                    </div>
+                    <div class="header-text">
+                        <h1 class="header-title">PrecisionPen</h1>
+                        <p class="header-subtitle">An AI-Powered ChatBot that Thinks, Researches, and Writes for You</p>
+                    </div>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon theme-icon"></i>
+                </button>
+            </header>
+
+            <!-- Messages Area -->
+            <div id="messages-container" class="messages-container">
+                <!-- Welcome message or chat history will be rendered here -->
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <form id="message-form" class="input-form">
+                    <div class="input-wrapper">
+                        <button type="button" class="mic-button" id="voice-input-button" aria-label="Use voice input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <input 
+                            type="text" 
+                            id="message-input" 
+                            class="message-input" 
+                            placeholder="Ask me to write an article, or to summarize, expand..."
+                            autocomplete="off" 
+                            required
+                            aria-label="Enter topic for article generation"
+                        >
+                        <button type="submit" class="send-button" id="send-button" aria-label="Send topic">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Loading Overlay -->
+            <div id="loading-overlay" class="loading-overlay hidden">
+                <div class="loading-content">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">Thinking...</p>
+                    <p class="loading-subtext">My AI agents are working on your request.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
